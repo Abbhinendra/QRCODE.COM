@@ -45,17 +45,12 @@ Generate.addEventListener("click", () => {
 downloaded.addEventListener("click", () => {
     let img = document.querySelector(".body img");
     let url = img.src;
-    fetch(url).then(res => res.blob()).then(file => {
-        let t = URL.createObjectURL(file);
-        let link = document.createElement("a");
-        link.href = t;
-        link.download = "QRCode.jpg";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        link.remove();
-        URL.revokeObjectURL(t);
-    })
+    let link=document.createElement("a");
+    link.href=url;
+    link.download="QRCode.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 })
 
 function random() {
