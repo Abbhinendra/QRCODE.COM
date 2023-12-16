@@ -52,6 +52,7 @@ downloaded.addEventListener("click", () => {
         link.download = "QRCode.jpg";
         document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
         link.remove();
         URL.revokeObjectURL(t);
     })
